@@ -1,0 +1,17 @@
+.kep {
+  justify-content: center;
+  margin-top: 10%;
+}
+.kep_tengah {
+  justify-content: center;
+}
+.kep2 {
+  text-align: center;
+}
+.kep-font {
+  font-weight: bold;
+}
+body {
+  background-image: url("../img/homeimg.jpg");
+  background-size: cover;
+}
