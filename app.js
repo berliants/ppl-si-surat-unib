@@ -431,24 +431,25 @@ app.post('/search', (request, response) => {
 // ROUTING DASHBOARD
 // get -> dashboard
 app.get('/', (request, response) => {
-  const id_admin = request.session.id_admin
-  admin.findOne({_id: id_admin}, (error, result) => {
-    if(error) {console.log(error)}
-    else  {
-      const data = result
-      if(data.length > 0) {
-        if(data[0].id == id_admin) {
-          response.redirect('dashboard')
-        }
-        else {
-          response.redirect('/login_admin')
-        }
-      }
-      else {
-        response.redirect('/login_admin')
-      }
-    }
-  })
+  // const id_admin = request.session.id_admin
+  // admin.findOne({_id: id_admin}, (error, result) => {
+  //   if(error) {console.log(error)}
+  //   else  {
+  //     const data = result
+  //     if(data.length > 0) {
+  //       if(data[0].id == id_admin) {
+  //         response.redirect('dashboard')
+  //       }
+  //       else {
+  //         response.redirect('/login_admin')
+  //       }
+  //     }
+  //     else {
+  //       response.redirect('/login_admin')
+  //     }
+  //   }
+  // })
+  response.redirect('/login_admin')
 })
 app.get('/dashboard', (request, response) => {
   const id_admin = request.session.id_admin
@@ -969,6 +970,6 @@ app.post('/status-surat', (request, response) => {
 
 
 
-app.listen(process.env.PORT||3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('server is running')
 })
